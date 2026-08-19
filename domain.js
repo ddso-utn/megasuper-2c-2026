@@ -1,5 +1,5 @@
 class Producto {
-  constructor(nombre, precioBase, cantidad) {
+  constructor(nombre, precioBase, cantidad = 1) {
     if (!nombre) {
       throw new Error("El producto debe tener un nombre");
     }
