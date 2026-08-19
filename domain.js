@@ -21,7 +21,7 @@ class Producto {
         descuento.valorDescontado(this.precioBase, this.cantidad)
       );
     }, precioBaseTotal);
-    return Math.max(0, precioFinal);
+    return Math.max(0, Math.round(precioFinal * 100) / 100);
   }
 }
 
