@@ -1,10 +1,16 @@
 class Producto {
-  constructor(nombre, precioBase, cantidad) {
+  constructor(nombre, precioBase) {
     if (!nombre) {
       throw new Error("El producto debe tener un nombre");
     }
     this.nombre = nombre;
     this.precioBase = precioBase;
+  }
+}
+
+class ItemCarrito {
+  constructor(producto, cantidad) {
+    this.producto = producto;
     this.cantidad = cantidad;
     this.descuentos = [];
   }
@@ -14,14 +20,28 @@ class Producto {
   }
 
   precioFinal() {
-    const precioBaseTotal = this.cantidad * this.precioBase;
+    const precioBaseTotal = this.cantidad * this.producto.precioBase;
     const precioFinal = this.descuentos.reduce((precioAnterior, descuento) => {
       return (
         precioAnterior -
-        descuento.valorDescontado(this.precioBase, this.cantidad)
+        descuento.valorDescontado(this.producto.precioBase, this.cantidad)
       );
     }, precioBaseTotal);
     return Math.max(0, precioFinal);
+  }
+}
+
+class Carrito {
+  constructor() {
+    this.items = [];
+  }
+
+  agregarItem(item) {
+    this.items.push(item);
+  }
+
+  precioTotal() {
+    return this.items.reduce((total, item) => total + item.precioFinal(), 0);
   }
 }
 
@@ -65,6 +85,8 @@ class DescuentoPorCantidad {
 
 module.exports = {
   Producto,
+  ItemCarrito,
+  Carrito,
   DescuentoFijo,
   DescuentoPorcentual,
   DescuentoPorCantidad,
