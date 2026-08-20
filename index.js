@@ -12,6 +12,7 @@ const {
   productosMasBaratosQue,
   obtenerSumaTotalPrecios,
   ordenarListaProductos,
+  productoMasCaro,
 } = require("./funciones.js");
 
 const carrito = [];
@@ -50,3 +51,5 @@ console.log("El precio final es: ", obtenerSumaTotalPrecios(bebidas));
 console.log("ORDENAMOS LA LISTA: ");
 ordenarListaProductos(bebidas);
 console.log(bebidas);
+
+console.log("EL PRODUCTO MAS CARO ES: ", productoMasCaro(bebidas));
