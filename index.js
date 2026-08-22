@@ -1,21 +1,18 @@
-const {
+import {
   Producto,
   ItemCarrito,
   Carrito,
-  DescuentoFijo,
-  DescuentoPorcentual,
   DescuentoPorCantidad,
-} = require("./domain.js");
+} from "./domain.js";
 
-const {
+import {
   aumentarPrecioBaseMap,
   precioMasAlto,
-  aumentarPrecioBase,
   productosMasBaratosQue,
   obtenerSumaTotalPrecios,
   ordenarListaProductos,
   productoMasCaro,
-} = require("./funciones.js");
+} from "./funciones.js";
 
 const carrito = new Carrito();
 
