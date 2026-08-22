@@ -7,9 +7,7 @@ function aumentarPrecioBase(productos, monto) {
 }
 
 function aumentarPrecioBaseMap(productos, monto) {
-  return productos.map(
-    (p) => new Producto(p.nombre, p.precioBase + monto, p.cantidad),
-  );
+  return productos.map((p) => new Producto(p.nombre, p.precioBase + monto));
 }
 
 function precioMasAlto(productos) {
