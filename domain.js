@@ -1,4 +1,4 @@
-class Producto {
+export class Producto {
   constructor(nombre, precioBase) {
     if (!nombre) {
       throw new Error("El producto debe tener un nombre");
@@ -8,7 +8,7 @@ class Producto {
   }
 }
 
-class ItemCarrito {
+export class ItemCarrito {
   constructor(producto, cantidad) {
     this.producto = producto;
     this.cantidad = cantidad;
@@ -31,7 +31,7 @@ class ItemCarrito {
   }
 }
 
-class Carrito {
+export class Carrito {
   constructor() {
     this.items = [];
   }
@@ -45,19 +45,19 @@ class Carrito {
   }
 }
 
-class DescuentoFijo {
+export class DescuentoFijo {
   constructor(valor) {
     if (valor <= 0) {
       throw new Error("Un descuento no puede ser negativo.");
     }
     this.valor = valor;
   }
-  valorDescontado(precioBase, cantidad) {
+  valorDescontado(_precioBase, _cantidad) {
     return this.valor;
   }
 }
 
-class DescuentoPorcentual {
+export class DescuentoPorcentual {
   constructor(porcentaje) {
     this.porcentaje = porcentaje;
   }
@@ -67,7 +67,7 @@ class DescuentoPorcentual {
   }
 }
 
-class DescuentoPorCantidad {
+export class DescuentoPorCantidad {
   constructor(cantidadMinima, porcentaje) {
     this.cantidadMinima = cantidadMinima;
     this.porcentaje = porcentaje;
@@ -82,12 +82,3 @@ class DescuentoPorCantidad {
     return valorDescontado;
   }
 }
-
-module.exports = {
-  Producto,
-  ItemCarrito,
-  Carrito,
-  DescuentoFijo,
-  DescuentoPorcentual,
-  DescuentoPorCantidad,
-};

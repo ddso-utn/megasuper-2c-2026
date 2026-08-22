@@ -1,0 +1,30 @@
+{
+  "name": "megasuper-2c-2026",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ddso-utn/megasuper-2c-2026#readme",
+  "bugs": {
+    "url": "https://github.com/ddso-utn/megasuper-2c-2026/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddso-utn/megasuper-2c-2026.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.9.0",
+    "globals": "^17.11.0"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
