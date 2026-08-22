@@ -33,6 +33,14 @@ function ordenarListaProductos(productos) {
   });
 }
 
+function productoMasCaro(productos) {
+  return productos.reduce((masCaro, productoActual) => {
+    return productoActual.precioFinal() > masCaro.precioFinal()
+      ? productoActual
+      : masCaro;
+  });
+}
+
 module.exports = {
   aumentarPrecioBase,
   aumentarPrecioBaseMap,
@@ -40,4 +48,5 @@ module.exports = {
   productosMasBaratosQue,
   obtenerSumaTotalPrecios,
   ordenarListaProductos,
+  productoMasCaro,
 };
